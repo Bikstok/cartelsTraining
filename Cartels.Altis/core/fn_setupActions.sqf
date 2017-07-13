@@ -40,3 +40,6 @@ life_actions pushBack (player addAction["<t color='#FF0000'>Repair Vehicle</t>",
 life_actions pushBack (player addAction["Pick Vehicle's Lock",life_fnc_lockpick,cursorTarget,-1,false,true,"",'!isNull cursorTarget && (player distance cursorTarget) < 4 && life_inv_lockpick > 0 && (locked cursorTarget != 0) && (count crew cursorTarget) > 0 && speed cursorTarget < 2 && (cursorTarget isKindOf "Car" || cursorTarget isKindOf "Air" || cursorTarget isKindOf "Ship") && !(cursorTarget in life_vehicles)']);
 //Eject from heli while engine still running
 life_actions pushBack (player addAction ["Eject", {_veh = vehicle player; if(_veh != player) then {_engineOn = isEngineOn _veh; player action ["GetOut", _veh]; sleep 1; [[_veh, "engineOn", _engineOn], "life_fnc_multiargMP", _veh] spawn BIS_fnc_MP;};}, "", 6, false, false, "", 'vehicle player isKindOf "Air" && driver vehicle player == player;']);
+
+//Pickup Item
+life_actions pushBack (player addAction["Pickup Item(s)",{createDialog "life_pickup_items"},"",0,false,false,"",' !isNull cursorObject && count (cursorObject getVariable ["item",[]]) > 0 && player distance cursorObject < 5 ']);

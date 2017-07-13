@@ -38,6 +38,7 @@ life_loadout = false;
 life_gotloadout = false;
 EAL_sellSpamTries = 0; /*Counter for how many times the file was accessed per x.*/
 EAL_canSell = true; /*Variable to allow sale of an item*/
+life_pickup_open = false;
 
 //OTHER SETTINGS
 life_disallowedThreatWeapons = ["", "Binocular"];

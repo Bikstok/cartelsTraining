@@ -114,10 +114,9 @@ if (!isNull _killer && {!(_killer isEqualTo _unit)} && {!(side _killer isEqualTo
 
 life_save_gear = [player] call life_fnc_fetchDeadGear;
 
-/*_unit removeWeapon (primaryWeapon _unit);
+_unit removeWeapon (primaryWeapon _unit);
 _unit removeWeapon (handgunWeapon _unit);
-_unit removeWeapon (secondaryWeapon _unit);*/
-removeAllWeapons player;
+_unit removeWeapon (secondaryWeapon _unit);
 
 //Killed by cop stuff...
 /*if (side _killer isEqualTo west && !(playerSide isEqualTo west)) then {
@@ -131,9 +130,9 @@ removeAllWeapons player;
 
 if (!isNull _killer && {!(_killer isEqualTo _unit)}) then {
     life_removeWanted = true;
-};
+};*/
 
-[_unit] call life_fnc_dropItems;*/
+[_unit] call life_fnc_dropItems;
 
 life_action_inUse = false;
 life_hunger = 100;

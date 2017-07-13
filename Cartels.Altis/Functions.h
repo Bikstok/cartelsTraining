@@ -105,7 +105,6 @@ class Life_Client_Core
 		//class medicLights {};
 		//class medicSiren {};
 
-		//Pentax Additions/Changes
 		class setPain {};
 		class bloodbag {};
 		class painkillers {};
@@ -146,7 +145,6 @@ class Life_Client_Core
 		class robAction {};
 		class captureHideout {};
 		class gather {};
-			////Pentax additions
 		class holsterWeapon {};
 		class toggleActions {};
 		class activateNitro {};
@@ -258,11 +256,10 @@ class Life_Client_Core
 		class inventoryClosed {};
 		class inventoryOpened {};
 		class isUIDActive {};
-		//class saveGear {};
+		class saveGear {};
 		class loadGear {};
 		class stripDownPlayer {};
 
-		//Pentax additions/CHANGES
 		class execute {};
 		class targetName {};
 		class doRespawn {};
@@ -309,7 +306,6 @@ class Life_Client_Core
 		class removeLicenses {};
 		class demoChargeTimer {};
 		class civLoadout {};
-		//Pentax Additions/Changes
 
 		class civFetchGear {};
 		class freezePlayer {};
@@ -374,7 +370,6 @@ class Life_Client_Core
 		class gangInvite {};
 		class gangDisband {};
 		class gangDisbanded {};
-		//Pentax Additions/Changes
 		class gangMarkers {};
 		class toggleCaptureUI {};
 		class updateCaptureUI {};
@@ -444,5 +439,6 @@ class Life_Client_Core
 		class safeFix {};
 		class vehicleGarage {};
 		class gangDeposit {};
+		class pickupItems {};
 	};
 };

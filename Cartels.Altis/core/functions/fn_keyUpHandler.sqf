@@ -65,17 +65,13 @@ if (life_brokenLeg && (_code in (actionKeys "MoveUp") || _code in (actionKeys "M
 };
 
 
-/*if (_code in (actionKeys "User2")) then {
+if (_code in (actionKeys "User2")) then {
 	if(!_alt && !_ctrlKey) then {
-		if(player getVariable ["restrained", false]) then {
-			hint "You cannot pick up items while you're restrained!";
-		} else {
-			closeDialog 0;
-			createDialog "life_pickup_items";
-			_handled = true;
-		};
+        closeDialog 0;
+        createDialog "life_pickup_items";
+        _handled = true;
 	};
-};*/
+};
 
 if (_code in (actionKeys "User10")) then {
 	if (soundVolume < 0.21) then {
