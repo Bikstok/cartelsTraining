@@ -26,6 +26,7 @@ corpseRemovalMaxTime = 9999;
 
 #include "dialog\MasterHandler.h"
 #include "outlw_magRepack\MagRepack_config.hpp"
+#include "LARs\override_VA_templates\settings.hpp"
 
 class RscTitles
 {
@@ -37,6 +38,7 @@ class RscTitles
 class CfgFunctions
 {
 	#include "Functions.h"
+	#include "LARs\override_VA_templates\functions\functions.hpp"
 };
 
 class CfgSounds

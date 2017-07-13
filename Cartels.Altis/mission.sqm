@@ -3521,7 +3521,7 @@ class Mission
 					fuel=0;
 					ammo=0;
 					text="shops_items";
-					init="this allowDamage false; removeallWeapons this;  this enableSimulation false; this addAction[""Medical Assistance"",life_fnc_healHospital]; this addAction[""Rebel Market"",life_fnc_virt_menu,""rebel""]; this addAction[""Rebel Clothing Shop"",life_fnc_clothingMenu,""reb"",0,false,false,"""",'playerSide == civilian'];  this addAction[""Rebel Weapon Shop"",life_fnc_weaponShopMenu,""rebel"",0,false,false,"""",'playerSide == civilian']; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu,"""",0,FALSE,FALSE,"""",' vehicle player == player && player distance _target < 4 '];";
+					init="this allowDamage false; removeallWeapons this;  this enableSimulation false; this addAction[""Medical Assistance"",life_fnc_healHospital]; this addAction [""Arsenal (Loadouts)"", {null = [_this] execVM 'arsenalini.sqf'}]; this addAction[""Rebel Market"",life_fnc_virt_menu,""rebel""]; this addAction[""Rebel Clothing Shop"",life_fnc_clothingMenu,""reb"",0,false,false,"""",'playerSide == civilian'];  this addAction[""Rebel Weapon Shop"",life_fnc_weaponShopMenu,""rebel"",0,false,false,"""",'playerSide == civilian']; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu,"""",0,FALSE,FALSE,"""",' vehicle player == player && player distance _target < 4 '];";
 				};
 			};
 		};

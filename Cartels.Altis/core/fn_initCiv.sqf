@@ -48,6 +48,13 @@ player addRating 9999999;
 			_vest = "";
 			hint "You cannot wear CSAT Uniforms and Plate Carriers at the same time!";
 		};
-		waitUntil {sleep 10; ((_uniform != uniform player || _vest != vest player) && (typeName life_clothing_store != "STRING"))};
+		// Disallow multiple grenades
+		_grenades = {_x == "HandGrenade"} count magazines player;
+		if (_grenades > 1) then {
+		    player removeMagazines "HandGrenade";
+		    player addMagazine "HandGrenade";
+		    hint "You can only carry one grenade. Do you even lift, bro?";
+		};
+		waitUntil {sleep 10; ((_uniform != uniform player || _vest != vest player || _grenades != {_x == "HandGrenade"} count magazines player) && (typeName life_clothing_store != "STRING"))};
 	};
 };
