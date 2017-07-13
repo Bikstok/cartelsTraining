@@ -72,10 +72,5 @@ if(life_removeWanted) then {
 
 [] call life_fnc_equipGear;
 
-if (playerSide == civilian && getPlayerUID player == (life_configuration select 0)) then
-{
-	player forceAddUniform "U_NikosAgedBody";
-};
-
 [] call SOCK_fnc_updateRequest;
 [] call life_fnc_hudUpdate; //Request update of hud.

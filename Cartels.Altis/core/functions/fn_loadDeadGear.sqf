@@ -42,24 +42,31 @@ removeHeadGear player;
 if(_uniform != "") then {_handle = [_uniform,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if(_vest != "") then {_handle = [_vest,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
-{
-	_handle = [_x,true,false,false,false] spawn life_fnc_handleItem;
-	waitUntil {scriptDone _handle};
-} foreach _magazines;
+
+{_handle = [_x,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};} foreach _items;
+if(_headgear != "") then {player addHeadGear _headgear};
+if(_goggles != "") then {player addGoggles _goggles};
 
 if(_primary != "") then {[_primary,true,false,false,false] spawn life_fnc_handleItem;};
 if(_launcher != "") then {[_launcher,true,false,false,false] spawn life_fnc_handleItem;};
 if(_handgun != "") then {[_handgun,true,false,false,false] spawn life_fnc_handleItem;};
 
-{_handle = [_x,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};} foreach _items;
+{_handle = [_x,true,false,true,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};} foreach _primitems;
+{_handle = [_x,true,false,true,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};} foreach _secitems;
+{_handle = [_x,true,false,true,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};} foreach _handgunitems;
+
+{_handle = [_x,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};} foreach _magazines;
 {[_x,true,false,false,true] call life_fnc_handleItem;} foreach (_uitems);
 {[_x,true,false,false,true] call life_fnc_handleItem;} foreach (_vitems);
 {[_x,true,true,false,false] call life_fnc_handleItem;} foreach (_bitems);
-{[_x,true,false,true,false] call life_fnc_handleItem;} foreach (_primitems);
-{[_x,true,false,true,false] call life_fnc_handleItem;} foreach (_secitems);
-{[_x,true,false,true,false] call life_fnc_handleItem;} foreach (_handgunitems);
-
-if(_headgear != "") then {player addHeadGear _headgear};
-if(_goggles != "") then {player addGoggles _goggles};
 
 [] call life_fnc_equipGear;
+
+_TracerMag = {
+	if(["tracer",_x] call BIS_fnc_inString) exitWith {_x}; ""
+} forEach magazines player;
+if(!isNil "_TracerMag" && {_TracerMag != ""} && {!(["tracer",currentMagazine player] call BIS_fnc_inString)}) then {
+	player removeMagazine _TracerMag;
+	player addMagazine currentMagazine player;
+	player addprimaryweaponitem _TracerMag;
+};

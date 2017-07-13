@@ -11,17 +11,17 @@ life_actions pushBack (player addAction["<t color='#FF0000'>Use Defibrillator</t
 
 
 //Blood Bag Self
-life_actions pushBack (player addAction["Blood Transfusion Self",life_fnc_bloodbag,player,-1,false,true,"",'(damage player > 0) && (life_inv_bloodbag > 0)']);
+life_actions pushBack (player addAction["<t color='#FF0000'>Blood Transfusion Self</t>",life_fnc_bloodbag,player,-1,false,true,"",'(damage player > 0) && (life_inv_bloodbag > 0)']);
 //Blood Bag Target
-life_actions pushBack (player addAction["Give Blood Transfusion",life_fnc_bloodbag,cursorTarget,-1,false,true,"",'isNull cursorTarget && (isPlayer cursorTarget) && (alive cursorTarget) && (damage cursorTarget > 0) && (life_inv_bloodbag > 0)']);
+life_actions pushBack (player addAction["<t color='#FF0000'>Give Blood Transfusion</t>",life_fnc_bloodbag,cursorTarget,-1,false,true,"",'isNull cursorTarget && (isPlayer cursorTarget) && (alive cursorTarget) && (damage cursorTarget > 0) && (life_inv_bloodbag > 0)']);
 //Pain Killers Self
-life_actions pushBack (player addAction["Use Pain Killers",life_fnc_painkillers,player,-1,false,true,"",'(life_pain > 0) && (life_inv_painkillers > 0)']);
+life_actions pushBack (player addAction["<t color='#FF0000'>Use Pain Killers</t>",life_fnc_painkillers,player,-1,false,true,"",'(life_pain > 0) && (life_inv_painkillers > 0)']);
 //Pain Killers Target
-life_actions pushBack (player addAction["Give Pain Killers",life_fnc_painkillers,cursorTarget,-1,false,true,"",'!isNull cursorTarget && (isPlayer cursorTarget) && (alive cursorTarget) && ((cursorTarget getVariable ["pain",0]) > 0) && (life_inv_painkillers > 0)']);
+life_actions pushBack (player addAction["<t color='#FF0000'>Give Pain Killers</t>",life_fnc_painkillers,cursorTarget,-1,false,true,"",'!isNull cursorTarget && (isPlayer cursorTarget) && (alive cursorTarget) && ((cursorTarget getVariable ["pain",0]) > 0) && (life_inv_painkillers > 0)']);
 //Splint Self
-life_actions pushBack (player addAction["Apply Splint to Self",life_fnc_splint,player,-1,false,true,"",'(life_brokenLeg) && (life_inv_splint > 0)']);
+life_actions pushBack (player addAction["<t color='#FF0000'>Apply Splint to Self</t>",life_fnc_splint,player,-1,false,true,"",'(life_brokenLeg) && (life_inv_splint > 0)']);
 //Splint Target
-life_actions pushBack (player addAction["Apply Splint",life_fnc_splint,cursorTarget,-1,false,true,"",'!isNull cursorTarget && (isPlayer cursorTarget) && (alive cursorTarget) && (cursorTarget getVariable ["broken",false]) && (life_inv_splint > 0)']);
+life_actions pushBack (player addAction["<t color='#FF0000'>Apply Splint</t>",life_fnc_splint,cursorTarget,-1,false,true,"",'!isNull cursorTarget && (isPlayer cursorTarget) && (alive cursorTarget) && (cursorTarget getVariable ["broken",false]) && (life_inv_splint > 0)']);
 //Execution
 life_actions pushBack (player addAction["<t color='#FF0000'>Execute!</t>",life_fnc_execute,false,-1,false,true,"",'!isNull cursorTarget && !(alive cursorTarget) && cursorTarget isKindOf "Man" && !(typeOf cursorTarget in ["Goat_random_F", "Cock_random_F", "Hen_random_F", "Sheep_random_F","Alsatian_Random_F"]) && !(currentWeapon player in life_disallowedThreatWeapons) && player distance cursorTarget < 2 ']);
 //Suicide vest
@@ -35,7 +35,7 @@ life_actions pushBack (player addAction["<t color='#00FF00'>Activate Nitro</t>",
 //Unflip
 life_actions pushBack (player addAction["Unflip Vehicle",life_fnc_flip,"",-1,false,false,"",'(cursorTarget isKindOf "Car" || cursorTarget isKindOf "Air") && (vehicle player == player) && (player distance cursorTarget < 8) && (vectorUp cursorTarget select 2 < 0.6 || vectorUp cursorTarget select 1 > 0.2 || vectorUp cursorTarget select 1 < -0.2) && (speed cursorTarget < 1)']);
 //Repair
-life_actions pushBack (player addAction["Repair Vehicle",life_fnc_repairTruck,"",99,false,true,"", ' vehicle player == player && !isNull cursorTarget && ((cursorTarget isKindOf "Car") OR (cursorTarget isKindOf "Air") OR (cursorTarget isKindOf "Ship")) && (player distance cursorTarget < 4.5) ']);
+life_actions pushBack (player addAction["<t color='#FF0000'>Repair Vehicle</t>",life_fnc_repairTruck,"",99,false,true,"", ' vehicle player == player && !isNull cursorTarget && ((cursorTarget isKindOf "Car") OR (cursorTarget isKindOf "Air") OR (cursorTarget isKindOf "Ship")) && (player distance cursorTarget < 4.5) ']);
 //Lockpicking
 life_actions pushBack (player addAction["Pick Vehicle's Lock",life_fnc_lockpick,cursorTarget,-1,false,true,"",'!isNull cursorTarget && (player distance cursorTarget) < 4 && life_inv_lockpick > 0 && (locked cursorTarget != 0) && (count crew cursorTarget) > 0 && speed cursorTarget < 2 && (cursorTarget isKindOf "Car" || cursorTarget isKindOf "Air" || cursorTarget isKindOf "Ship") && !(cursorTarget in life_vehicles)']);
 //Eject from heli while engine still running

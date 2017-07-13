@@ -207,7 +207,8 @@ life_inv_items =
 	"life_inv_defib",
 	"life_inv_splint",
 	"life_inv_bloodbag",
-	"life_inv_nitro"
+	"life_inv_nitro",
+	"life_inv_adrenalineShot"
 ];
 
 //Setup variable inv vars.
@@ -291,7 +292,8 @@ sell_array =
 	["bloodbag",0],
 	["defib",0],
 	["splint",0],
-	["nitro",0]
+	["nitro",0],
+	["adrenalineShot",0]
 ];
 __CONST__(sell_array,sell_array);
 
@@ -326,7 +328,8 @@ buy_array =
 	["bloodbag",0],
 	["defib",0],
 	["splint",0],
-	["nitro",0]
+	["nitro",0],
+	["adrenalineShot",0]
 
 ];
 __CONST__(buy_array,buy_array);

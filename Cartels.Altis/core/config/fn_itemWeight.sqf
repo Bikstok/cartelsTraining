@@ -61,5 +61,6 @@ switch (_item) do
 	case "defib": {20};
 	case "splint": {3};
 	case "nitro": {5};
+	case "adrenalineShot": {1};
 	default {1};
 };

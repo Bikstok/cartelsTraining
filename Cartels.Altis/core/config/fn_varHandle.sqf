@@ -71,6 +71,7 @@ switch (_mode) do
 			case "bloodbag": {"life_inv_bloodbag"};
 			case "splint": {"life_inv_splint"};
 			case "nitro": {"life_inv_nitro"};
+			case "adrenalineShot": {"life_inv_adrenalineShot"};
 
 
 		};
@@ -135,6 +136,7 @@ switch (_mode) do
 			case "life_inv_bloodbag": {"bloodbag"};
 			case "life_inv_splint": {"splint"};
 			case "life_inv_nitro": {"nitro"};
+			case "life_inv_adrenalineShot": {"adrenalineShot"};
 		};
 	};
 };

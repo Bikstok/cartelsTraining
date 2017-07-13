@@ -20,7 +20,8 @@ switch (_var) do {
 	case "life_inv_lockpick": {("icons\items\lockpick.paa")};
 	case "life_inv_defib": {("icons\items\defib.paa")};
 	case "life_inv_painkillers": {("icons\items\painkillers.paa")};
- case "life_inv_bloodbag": {("icons\items\bloodbag.paa")};
+    case "life_inv_bloodbag": {("icons\items\bloodbag.paa")};
 	case "life_inv_splint": {("icons\items\splint.paa")};
 	case "life_inv_nitro": {("icons\items\nitro.paa")};
+	case "life_inv_adrenalineShot": {("icons\items\adrenalineshot.paa")};
 };

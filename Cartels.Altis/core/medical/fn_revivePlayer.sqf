@@ -20,8 +20,8 @@ _revivable = _target getVariable ["Revive",FALSE];
 if(_revivable) exitWith {};
 
 _revivableTime = _target getVariable["can_revive", -1000];
-if(_revivableTime > time) exitWith {
-	hint format["This person has been revived too frequently. Their body can't handle it for another %1 minute(s).", ceil ((_revivableTime - time) / 60)]
+if(_target getVariable ["Reviving",player] != player) exitWith {
+    hint "Someone else is already reviving this person"
 };
 if(time - (_target getVariable ["last_revived",-1000]) < 300) exitWith {
 	hint format["The victim was recently revived and cannot be revived again for %1 seconds.",((_target getVariable ["last_revived",-1000]) + 300) - time];

@@ -20,7 +20,7 @@ class Life_HUD_nameTags {
 			text = "";
 			size = 0.04;
 			shadow = 1.5;
-			w = 0; h = 0;
+			w = 0.6; h = 0.65;
 			x = 0.1; y = 0.1;
 		};
 		

@@ -17,9 +17,9 @@ player createDiaryRecord["changelog",
 
 player createDiaryRecord["changelog",
  [
-	"v 2.0",
+	"v 1.1",
 		"
-			Complete overhaul on revive system. Players can now drag dead bodies.
+			Several bugfixes and changes added by Bikstok.
 		"
 	]
 ];
@@ -48,8 +48,9 @@ player createDiaryRecord ["features",
 			5 minute bleeding out<br/>
 			Player executing<br/>
 			Blood Bagging<br/>
-		 Painkillers<br/>
+		    Painkillers<br/>
 			Splint<br/>
+			Adrenaline Shots<br/>
 			Cartels<br/>
 			Nitro<br/>
 			Seatbelt<br/>

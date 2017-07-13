@@ -98,6 +98,11 @@ switch (true) do
 		[] spawn life_fnc_pickAxeUse;
 	};
 
+    case (_item ==  "adrenalineShot"):
+    {
+        [] spawn life_fnc_adrenalineShot;
+    };
+
 	default
 	{
 		hint localize "STR_ISTR_NotUsable";

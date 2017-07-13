@@ -28,8 +28,8 @@ scopeName "main";
 				_crew = crew cursorTarget;
 				if (count _crew > 0 && vehicle player != cursorTarget) then
 				{
-					{if(_name == "") then {_name = name _x } else {_name = _name + ", " + name _x }} forEach _crew;
-					drawIcon3D ["",_color,_pos,0,0,0,_name,1,0.04];
+					{if(_name == "") then {_name = name _x; } else {_name = _name + ", " + name _x; }} forEach _crew;
+					drawIcon3D ["",_color,_pos,0,0,0,_name,1,0.04,"PuristaMedium"];
 				};
 			};
 		};
@@ -49,7 +49,7 @@ scopeName "main";
 				_color = [1,1,1,1];
 				if (!alive cursorTarget ) then { _color = [1,0,0,1]; };
 				_name = name cursorTarget;
-				switch (cursorTarget getVariable["coplevel", 0]) do
+				/*switch (cursorTarget getVariable["copLevel", 0]) do
 				{
 					case (1) : {_name = format["Police Cadet %1", name cursorTarget];};
 					case (2) : {_name = format["Police Constable %1", name cursorTarget];};
@@ -59,17 +59,30 @@ scopeName "main";
 					case (6) : {_name = format["Police Captain %1", name cursorTarget];};
 					default {
 						_gang = cursorTarget getVariable["gangName",""];
-						if (_hidden && player distance cursorTarget > 20) then { _name = "Unknown" };
+						if (_hidden && player distance cursorTarget > 20) then { _name = "Unknown"; };
 						if (_gang != "") then {
 							_pos2 = +_pos;
 							_pos2 set[2,((getPosATL cursorTarget) select 2) + 2];
 
-							drawIcon3D ["",_color,_pos2,0,0,0,format["[%1]", _gang],0.25,0.01];
+							drawIcon3D ["",_color,_pos2,0,0,0,format["[%1]", _gang],0.25,0.01,"PuristaMedium"];
 						};
 					};
-				};
+				};*/
+
+				/*if (cursorTarget getVariable ["life_title",""] != "") then
+				{
+					_title = cursorTarget getVariable "life_title";
+					_color = switch (_title) do
+					{
+						case "The Prominent %1": { [0.6,0.6,0,1] };
+						case "Tycoon %1": { [0.8,0.8,0,1] };
+						case "The Eminent %1": { [1,1,0,1] };
+						default { _color };
+					};
+					_name = format[_title, _name];
+				};*/
 				systemChat format["_name = %1", _name];
-				drawIcon3D ["",_color,_pos,0,0,0,_name,1,0.04];
+				drawIcon3D ["",_color,_pos,0,0,0,_name,1,0.04,"PuristaMedium"];
 			};
 		};
     };

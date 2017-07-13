@@ -418,6 +418,7 @@ class Life_Client_Core
 		class defuseKit {};
 		class storageBox {};
 		class nitro {};
+		class adrenalineShot {};
 	};
 
 	class Dialog_Controls

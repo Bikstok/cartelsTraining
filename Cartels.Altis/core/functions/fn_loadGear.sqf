@@ -82,6 +82,6 @@ if(_seco != "") then {_handle = [_seco,true,false,false,false] spawn life_fnc_ha
     };
 } foreach (_hItems);
 
-if(playerSide == independent && {uniform player == "U_Rangemaster"}) then {
+/*if(playerSide == independent && {uniform player == "U_Rangemaster"}) then {
 	[[player,0,"textures\medic_uniform.jpg"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;
-};
+};*/

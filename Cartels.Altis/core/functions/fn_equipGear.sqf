@@ -27,9 +27,9 @@ _customTexture = switch (uniform player) do {
 				default { "images\police_combatu_sgt.jpg" };
 			};
 		};
-	case "U_I_CombatUniform_shortsleeve": {
+/*	case "U_I_CombatUniform_shortsleeve": {
 		"images\medic_uniform.jpg"
-	};
+	};*/
 	default {
 		""
 	};
