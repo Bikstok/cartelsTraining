@@ -14,11 +14,14 @@ _deleted = false;
 {
 	while {true} do {
 		sleep (1 * 60);
-		{
-			if (count crew _x == 0) then {
-				deleteVehicle _x;
-			};
-		} forEach nearestObjects [getMarkerPos "car_spawn", ["Car", "Air", "Armormed"], 200];
+		_vehiclesInSpawn = nearestObjects [getMarkerPos "car_spawn", ["Car", "Air", "Armormed"], 200];
+		if (count _vehiclesInSpawn > 3) then {
+			{
+				if (count crew _x == 0) then {
+					deleteVehicle _x;
+				};
+			} forEach _vehiclesInSpawn;
+		};
 	};
 };
 
