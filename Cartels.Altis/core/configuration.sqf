@@ -125,6 +125,7 @@ life_action_in_use = false;
 life_thirst = 100;
 life_hunger = 100;
 life_cash = 0;
+life_atmbank = 0;
 __CONST__(life_impound_car,0);
 __CONST__(life_impound_boat,0);
 __CONST__(life_impound_air,0);

@@ -26,6 +26,7 @@ _unit setVariable ["Escorting",false,true];
 _unit setVariable ["transporting",false,true];
 _unit setVariable ["playerSurrender",false,true];
 _unit setVariable ["steam64id",(getPlayerUID player),true]; //Set the UID.
+life_respawned = false;
 
 //Setup our camera view
 life_deathCamera  = "CAMERA" camCreate (getPosATL _unit);
@@ -67,7 +68,7 @@ _unit spawn
 		[] call life_fnc_spawnMenu;
 	};*/
 	waitUntil {_Timer ctrlSetText format["You will bleed to death in: %1",[(_maxTime - time),"MM:SS"] call BIS_fnc_secondsToString];
-    round(_maxTime - time) <= 0 || isNull _this};
+    round(_maxTime - time) <= 0 || isNull _this || life_respawned};
 	if (!(isNull _this) && !(life_respawned)) then
 	{
 		life_respawned = true;
@@ -112,7 +113,7 @@ if (!isNull _killer && {!(_killer isEqualTo _unit)} && {!(side _killer isEqualTo
 };
 */
 
-life_save_gear = [player] call life_fnc_fetchDeadGear;
+life_dead_gear = [_unit] call life_fnc_fetchDeadGear;
 
 _unit removeWeapon (primaryWeapon _unit);
 _unit removeWeapon (handgunWeapon _unit);
@@ -134,12 +135,11 @@ if (!isNull _killer && {!(_killer isEqualTo _unit)}) then {
 
 [_unit] call life_fnc_dropItems;
 
-life_action_inUse = false;
+life_action_in_use = false;
 life_hunger = 100;
 life_thirst = 100;
 life_carryWeight = 0;
 CASH = 0;
-life_is_alive = false;
 
 [] call life_fnc_hudUpdate; //Get our HUD updated.
 [[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;

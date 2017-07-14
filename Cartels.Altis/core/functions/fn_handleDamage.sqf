@@ -70,9 +70,9 @@ if ((vehicle _source isKindOf "LandVehicle") && _source != _unit && driver (vehi
 	};
 };
 
-if ((((getDammage _unit) + _damage) >= 0.95) || (_damage >= 0.95)) then {
+/*if ((((getDammage _unit) + _damage) >= 0.95) || (_damage >= 0.95)) then {
 	life_dead_gear = [player] call life_fnc_fetchDeadGear;
-};
+};*/
 
 /*if (_damage > 0.4 && (!isPlayer _source || (vehicle _source isKindOf "LandVehicle"))) then {
 	if (_hitBox == "legs") then {

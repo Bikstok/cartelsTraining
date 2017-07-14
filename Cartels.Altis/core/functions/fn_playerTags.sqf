@@ -129,7 +129,7 @@ scopeName "main";
 					};
 				};
 			};
-			if (cursorTarget isKindOf "Man") then
+			if (cursorTarget isKindOf "Man" && alive cursorTarget) then
 			{
 				_hidden = ((goggles cursorTarget) in ["G_Balaclava_blk","G_Balaclava_combat","G_Balaclava_lowprofile","G_Balaclava_oli","G_Bandanna_aviator","G_Bandanna_beast","G_Bandanna_blk","G_Bandanna_khk","G_Bandanna_oli","G_Bandanna_shades","G_Bandanna_sport","G_Bandanna_tan"]);
 				_vis = lineIntersects [eyePos player, eyePos cursorTarget,player, cursorTarget];
@@ -145,7 +145,7 @@ scopeName "main";
 					};
 					_color = [1,1,1,1];
 					_name = name cursorTarget;
-					if (!alive cursorTarget ) then { _color = [1,0,0,1]; _name = cursorTarget getVariable ["name", "Unknown Dead Guy"]; };
+					if (!alive cursorTarget ) then { _color = [1,0,0,1]; _name = cursorTarget getVariable ["name", "Unknown"]; };
 					switch (cursorTarget getVariable["coplevel", 0]) do
 					{
 						case (1) : {_name = format["Police Cadet %1", name cursorTarget];};

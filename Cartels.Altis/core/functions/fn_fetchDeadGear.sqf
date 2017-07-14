@@ -10,11 +10,9 @@ params [["_unit",objNull,[objNull]]];
 
 if (isNull _unit) exitWith {};
 
-private _dropWeapons = 0;
-
-private _primary = [primaryWeapon _unit, ""] select _dropWeapons;
-private _launcher = [secondaryWeapon _unit, ""] select _dropWeapons;
-private _handgun = [handGunWeapon _unit, ""] select _dropWeapons;
+private _primary = [primaryWeapon _unit, ""] select 0;
+private _launcher = [secondaryWeapon _unit, ""] select 0;
+private _handgun = [handGunWeapon _unit, ""] select 0;
 
 private _primitems = [];
 private _secitems = [];
