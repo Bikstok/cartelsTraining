@@ -115,9 +115,10 @@ life_fnc_garageRefund = compileFinal
 {
 	while {true} do {
 		if (cameraView == "GROUP") then {
-				hint "Reported to admins, don't try this anymore!";
-				player switchCamera "EXTERNAL";
-		}
+			hint "Reported to admins, don't try this anymore!";
+			player switchCamera "EXTERNAL";
+		};
+		waitUntil {sleep 2; cameraView == "GROUP"};
 	};
 };
 

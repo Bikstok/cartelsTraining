@@ -81,28 +81,28 @@ class life_admin_menu {
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		class Compensate : Life_RscButtonMenu {
+		class Teleport : Life_RscButtonMenu {
 			idc = 2904;
-			text = "Add Money";
-			onButtonClick = "createDialog ""Life_Admin_Compensate"";";
+			text = "Teleport";
+			onButtonClick = "[] call life_fnc_adminTeleport; hint 'Select where you would like to teleport';";
 			x = 0.26 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.88 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		class Spectate : Life_RscButtonMenu {
+		class TeleportHere : Life_RscButtonMenu {
 			idc = 2905;
-			text = "Spectate";
-			onButtonClick = "[] call life_fnc_adminSpectate;";
+			text = "TP To You";
+			onButtonClick = "[] call life_fnc_adminTpHere;";
 			x = 0.42 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.88 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		class Teleport : Life_RscButtonMenu {
+		class Debug : Life_RscButtonMenu {
 			idc = 2906;
-			text = "Teleport";
-			onButtonClick = "[] call life_fnc_adminTeleport; hint 'Select where you would like to teleport';";
+			text = "Camera";
+			onButtonClick = "[] call BIS_fnc_camera;;";
 			x = 0.58 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.88 - (1 / 25);
 			w = (6.25 / 40);
@@ -113,43 +113,43 @@ class life_admin_menu {
 
 		//SECOND LINE------------------------------ STARTS
 
-		class TeleportHere : Life_RscButtonMenu {
+		class Delete : Life_RscButtonMenu {
 			idc = 2907;
-			text = "TP To You";
-			onButtonClick = "[] call life_fnc_adminTpHere;";
+			text = "Delete";
+			onButtonClick = "[] spawn life_fnc_adminDeleteObject;";
 			x = -0.06 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.885;
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		class Delete : Life_RscButtonMenu {
+		class God : Life_RscButtonMenu {
 			idc = 2908;
-			text = "Delete";
-			onButtonClick = "[] spawn life_fnc_adminDeleteObject;";
+			text = "God Mode";
+			onButtonClick = "[] call life_fnc_adminGodMode;";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.885;
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		class HealSelf : Life_RscButtonMenu {
+		class Markers : Life_RscButtonMenu {
 			idc = 2909;
-			text = "Heal(Self)";
-			onButtonClick = "[] call life_fnc_adminHealSelf;";
+			text = "Markers";
+			onButtonClick = "[] spawn life_fnc_adminMarkers;";
 			x = 0.26 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.885;
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		class HealTarget : Life_RscButtonMenu {
+		/*class Debug : Life_RscButtonMenu {
 			idc = 2910;
-			text = "Heal(Other)";
-			onButtonClick = "[] spawn life_fnc_adminHealTarget;";
+			text = "Debug";
+			onButtonClick = "[] spawn life_fnc_adminDebugCon;";
 			x = 0.42 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.885;
 			w = (6.25 / 40);
 			h = (1 / 25);
-		};
-		class God : Life_RscButtonMenu {
+		};*/
+		/*class God : Life_RscButtonMenu {
 			idc = 2911;
 			text = "God Mode";
 			onButtonClick = "[] call life_fnc_adminGodMode;";
@@ -157,12 +157,12 @@ class life_admin_menu {
 			y = 0.885;
 			w = (6.25 / 40);
 			h = (1 / 25);
-		};
+		};*/
 
 		//SECOND LINE------------------------------ ENDS
 
 		//THIRD LINE------------------------------ STARTS
-		class Invisbility : Life_RscButtonMenu {
+		/*class Invisbility : Life_RscButtonMenu {
 			idc = 2912;
 			text = "Invisbility";
 			onButtonClick = "[] spawn life_fnc_adminInvisibility;";
@@ -206,7 +206,7 @@ class life_admin_menu {
 			y = 0.930;
 			w = (6.25 / 40);
 			h = (1 / 25);
-		};
+		};*/
 
 		//THIRD LINE------------------------------ END
 

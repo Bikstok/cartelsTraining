@@ -1,4 +1,4 @@
-author = "Pentax, edited by Bikstok";
+author = "Pentax (creator) & Bikstok";
 onLoadName = "Cartels Training Server";
 onLoadMission = "A RPG game mode developed by Tonic";
 joinUnassigned = 1;
@@ -83,16 +83,6 @@ class CfgDebriefing
 		title = "Mission Failed";
 		subtitle = "You are blacklisted from cops";
 		description = "You are not allowed to be a cop due to previous actions and the admins have removed you from being a cop.";
-		pictureBackground = "";
-		picture = "";
-		pictureColor[] = {0,0.3,0.6,1};
-	};
-
-	class SpyGlass
-	{
-		title = "The SpyGlass sees you";
-		subTitle = "You were detected by the SpyGlass";
-		description = "You were detected for cheating and have been reported to the server. Enjoy your day.";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};

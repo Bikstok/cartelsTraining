@@ -8,9 +8,20 @@
 */
 private "_deleted";
 _deleted = false;
+
+// Delete vehicles in spawn
 while {true} do {
+	sleep (1 * 60);
+	{
+		if (count crew _x == 0) then {
+			deleteVehicle _x;
+		};
+	} forEach nearestObjects [getMarkerPos "car_spawn", ["Car", "Air", "Armormed"], 200];
+};
+
+while {true} do {
+	sleep (5 * 60);
 	private["_veh","_units"];
-	sleep (60 * 60);
 	{
 		_veh = _x;
 		_vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "vehicleClass");
@@ -48,14 +59,12 @@ while {true} do {
 		};
 	} foreach vehicles;
 	
-	sleep (3 * 60); //3 minute cool-down before next cycle. 
 	{
 		if((typeOf _x) in ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F", "Land_Can_V3_F","Land_Money_F","Land_Suitcase_F"]) then {
 			deleteVehicle _x;
 		};
 	} foreach (allMissionObjects "Thing");
 	
-	sleep (2 * 60);
 	{
 		deleteVehicle _x;
 	} foreach (allMissionObjects "GroundWeaponHolder");

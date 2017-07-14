@@ -27,13 +27,14 @@ if(life_is_arrested) then
 };
 player addRating 9999999;
 
-// Disallow CSAT and Carriers
 [] spawn
 {
-	private ["_uniform","_vest","_gwh"];
+	private ["_uniform","_vest","_gwh","_grenades"];
 	while {true} do
 	{
 		waitUntil { alive player };
+
+		// Disallow CSAT and Carriers
 		_uniform = uniform player;
 		_vest = vest player;
 		if (({_uniform find _x >=0} count ["U_O_Pilot","U_O_Combat"] > 0) && (_vest find "PlateCarrier" >= 0)) then
@@ -48,6 +49,7 @@ player addRating 9999999;
 			_vest = "";
 			hint "You cannot wear CSAT Uniforms and Plate Carriers at the same time!";
 		};
+
 		// Disallow multiple grenades
 		_grenades = {_x == "HandGrenade"} count magazines player;
 		if (_grenades > 1) then {
@@ -55,6 +57,7 @@ player addRating 9999999;
 		    player addMagazine "HandGrenade";
 		    hint "You can only carry one grenade. Do you even lift, bro?";
 		};
+
 		waitUntil {sleep 10; ((_uniform != uniform player || _vest != vest player || _grenades != {_x == "HandGrenade"} count magazines player) && (typeName life_clothing_store != "STRING"))};
 	};
 };
